@@ -1,4 +1,4 @@
-## @jianghe/sand-viewport 用法
+## @jianghe/sand-viewport 用法.
 
 > 执行 setViewport 会在 head 中增加一个 meta 标签
 
