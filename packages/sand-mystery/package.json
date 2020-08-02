@@ -1,9 +1,8 @@
 {
   "name": "@jianghe/sand-mystery",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "private": false,
   "description": "加解密工具",
-  "main": "./bin/sand-mystery.js",
   "license": "MIT",
   "authors": [
     {
@@ -11,6 +10,7 @@
       "email": "573748150jh@163.com"
     }
   ],
+  "main": "./bin/sand-mystery.js",
   "keywords": [
     "sand",
     "sand-mystery"
