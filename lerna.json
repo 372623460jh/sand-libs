@@ -1,6 +1,6 @@
 {
   "lerna": "2.11.0",
-  "packages": ["packages/sand-mystery"],
+  "packages": ["packages/sand-mystery", "packages/sand-viewport"],
   "command": {
     "version": {
       "conventionalCommits": true

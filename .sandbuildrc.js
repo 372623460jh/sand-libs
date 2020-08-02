@@ -10,4 +10,14 @@ module.exports = {
     // ts过babel
     tsShouldBabel: true,
   },
+  // rollup 配置
+  configurations: [
+    {
+      entry: path.resolve(__dirname, './packages/sand-viewport/src/index.ts'),
+      pkgPath: path.resolve(__dirname, './packages/sand-viewport'),
+      bundleName: 'sand-viewport',
+      isTs: true,
+      moduleType: ['esm'],
+    },
+  ],
 };
