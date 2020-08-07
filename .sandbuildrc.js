@@ -19,5 +19,12 @@ module.exports = {
       isTs: true,
       moduleType: ['esm'],
     },
+    {
+      entry: path.resolve(__dirname, './packages/sand-utils/src/index.ts'),
+      pkgPath: path.resolve(__dirname, './packages/sand-utils'),
+      bundleName: 'sand-utils',
+      isTs: true,
+      moduleType: ['esm'],
+    },
   ],
 };
