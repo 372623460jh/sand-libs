@@ -1,6 +1,6 @@
 {
   "name": "@jianghe/sand-utils",
-  "version": "1.2.5",
+  "version": "1.2.6-1",
   "private": false,
   "description": "sand工具库",
   "license": "MIT",
@@ -28,11 +28,10 @@
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
-  "devDependencies": {},
   "dependencies": {
     "axios": "^0.19.2",
     "debug": "^4.1.1",
-    "lodash.throttle": "^4.1.1",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1"
   }
 }
