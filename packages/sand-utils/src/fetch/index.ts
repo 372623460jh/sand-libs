@@ -33,7 +33,11 @@ const DEFAULTS = {
  * @param {*} url 地址
  * @param {*} options 选项
  */
-export default function request(url: string, params: any): Promise<any> {
+export default function request(
+  url: string,
+  params: any,
+  handerRes: any
+): Promise<any> {
   // 请求
   const reqParams = {
     ...DEFAULTS,
@@ -50,6 +54,17 @@ export default function request(url: string, params: any): Promise<any> {
    */
   function logRes(res) {
     logResponse(url, res);
+    return res;
+  }
+
+  /**
+   * 处理请求
+   * @param {*} res
+   */
+  function handerResponse(res) {
+    if (handerRes) {
+      return handerRes(res);
+    }
     return res;
   }
 
@@ -89,6 +104,8 @@ export default function request(url: string, params: any): Promise<any> {
     axios({ ...reqParams })
       // 请求结果日志输出
       .then(logRes)
+      // 处理请求返回
+      .then(handerResponse)
       // 处理网络异常等报错
       .catch(processError)
   );
@@ -100,12 +117,21 @@ export default function request(url: string, params: any): Promise<any> {
  * @param {object} params   请求传递数据
  * @param {object} options  其他参数
  */
-export function get(url: string, params: any, options = {}): Promise<any> {
-  return request(url, {
-    method: 'GET',
-    params,
-    ...options,
-  });
+export function get(
+  url: string,
+  params: any,
+  options = {},
+  handerRes
+): Promise<any> {
+  return request(
+    url,
+    {
+      method: 'GET',
+      params,
+      ...options,
+    },
+    handerRes
+  );
 }
 
 /**
@@ -115,11 +141,20 @@ export function get(url: string, params: any, options = {}): Promise<any> {
  * @param {object} options  其他参数
  * 如果服务端支持application/json options.contentType= 'json'
  */
-export function post(url: string, params: any, options = {}): Promise<any> {
+export function post(
+  url: string,
+  params: any,
+  options = {},
+  handerRes
+): Promise<any> {
   // 如果服务端支持application/json
-  return request(url, {
-    method: 'POST',
-    data: params,
-    ...options,
-  });
+  return request(
+    url,
+    {
+      method: 'POST',
+      data: params,
+      ...options,
+    },
+    handerRes
+  );
 }

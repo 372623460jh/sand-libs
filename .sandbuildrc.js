@@ -24,7 +24,7 @@ module.exports = {
       pkgPath: path.resolve(__dirname, './packages/sand-utils'),
       bundleName: 'sand-utils',
       isTs: true,
-      moduleType: ['esm'],
+      moduleType: ['esm', 'cjs'],
     },
   ],
 };
