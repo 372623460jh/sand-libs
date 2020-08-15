@@ -17,7 +17,8 @@
     "sand-utils"
   ],
   "files": [
-    "esm"
+    "esm",
+    "cjs"
   ],
   "scripts": {},
   "repository": {
